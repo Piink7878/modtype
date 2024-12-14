@@ -3,7 +3,7 @@ let timeLeft = 60;  // 60 seconds
 let wordList = ["hello", "world", "speed", "python", "game", "test", "code"];
 let currentWord = "";
 let wordX;
-let wordSpeed = 3.8;  // Word speed
+let wordSpeed = 3.4;  // Word speed
 let gameInterval;
 let timerInterval;
 let countdownInterval;
