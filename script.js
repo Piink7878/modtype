@@ -1,4 +1,5 @@
 // กำหนดข้อความที่ใช้ฝึกพิมพ์
+let accuracy = 0
 const texts = [
     // ชุดคำศัพท์ทั่วไปสำหรับโปรแกรมเมอร์
     "function variable loop array object string integer syntax error input output compile debug execute stack queue recursion condition event asynchronous promise",
@@ -75,9 +76,10 @@ function startCountdown() {
         if (timeRemaining <= 0 || stopTimer) {
             clearInterval(timerInterval);
             if (!stopTimer) {
-                showPopup("Time's up!", 0, timeRemaining);
+                showPopup("Time up!", accuracy.toFixed(2), timeRemaining);
             }
         }
+        
     }, 1000); // อัปเดตทุก 1 วินาที
 }
 
@@ -126,8 +128,8 @@ function checkAccuracy(inputText) {
     }
 
     // คำนวณความแม่นยำจากจำนวนตัวอักษรที่พิมพ์ถูกต้อง
-    let accuracy = (totalCharactersTyped / (originalWords.join('').length)) * 100;
-    accuracyElement.textContent = `Accuracy: ${accuracy.toFixed(2)}%`;
+    accuracy = (totalCharactersTyped / (originalWords.join('').length)) * 100;
+    accuracyElement.textContent = `Progress: ${accuracy.toFixed(2)}%`;
 
     // หากพิมพ์ตรง 100% ให้หยุดการจับเวลา
     if (accuracy === 100) {
@@ -154,7 +156,7 @@ function showPopup(status, accuracy, remainingTime) {
 
     // แสดงข้อมูลใน pop-up
     popupStatus.textContent = status;
-    popupAccuracy.textContent = `Accuracy: ${accuracy}%`; // เพิ่มความแม่นยำ
+    popupAccuracy.textContent = `Progress: ${accuracy}%`; // เพิ่มความแม่นยำ
     popupTime.textContent = `Time: ${60 - remainingTime} seconds`; // เวลาที่ใช้
     popupCharacters.textContent = `Total Characters Typed: ${totalCharactersTyped}`; // จำนวนตัวอักษรที่พิมพ์
     popupWPM.textContent = `WPM: ${wpm}`; // WPM ที่คำนวณได้
@@ -174,7 +176,7 @@ function closePopup() {
 function startNewTest() {
     textToType.textContent = getRandomText(); // Update to a new text
     inputBox.value = ''; // Clear input box
-    accuracyElement.textContent = "Accuracy: 0%"; // Reset accuracy
+    accuracyElement.textContent = "Progress: 0%"; // Reset accuracy
     statusElement.textContent = ""; // Clear status
     timeRemaining = 60; // Reset the timer to 60 seconds
     timerElement.textContent = `Time: ${timeRemaining} seconds`; // Reset timer display
