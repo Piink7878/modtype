@@ -45,36 +45,29 @@
   </div>
     <!--END scoreboard section design-------------------->
 
-
   <div id="game">
     <button id="start-btn">Start MODspeed</button>
 
-    <div class="count-box">
-      <div id="score-time" class="hidden">
-        <div id="score">Score: 0</div>
-        <div id="time">Time: 60</div>
-        <div id="character-count">Characters Typed: 0</div>
-      </div>
+    <div id="score-time" class="hidden">
+      <div id="score">Score: 0</div>
+      <div id="time">Time: 60</div>
+      <div id="character-count">Characters Typed: 0</div>
     </div>
 
-    <div class="container">
-      <div id="word-container" class="hidden">
-        <span id="word"></span>
-      </div>
-  
-      <input type="text" id="input" class="hidden" placeholder="Type the word" autocomplete="off">
+    <div id="word-container" class="hidden">
+      <span id="word"></span>
     </div>
 
+    <input type="text" id="input" class="hidden" placeholder="Type the word" autocomplete="off">
 
+  </div>
 
-    <div id="popup" class="hidden">
-      <p>Game Over!</p>
-      <p>Your <span id="final-score"></span></p>
-      <p><span id="final-characters"></span></p> <!-- Display Total Characters Typed -->
-      <p><span id="final-wpm"></span></p> <!-- Added WPM display -->
-      <button id="restart-btn">Restart</button>
-    </div>
-
+  <div id="popup" class="hidden">
+    <p>Game Over!</p>
+    <p>Your <span id="final-score"></span></p>
+    <p><span id="final-characters"></span></p> <!-- Display Total Characters Typed -->
+    <p><span id="final-wpm"></span></p> <!-- Added WPM display -->
+    <button id="restart-btn">Restart</button>
   </div>
 
   <script src="scriptspeed.js"></script>

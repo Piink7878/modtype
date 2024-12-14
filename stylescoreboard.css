@@ -13,6 +13,13 @@
     font-style: normal;
 }
 
+:root{
+    --bg--color: #CB8A4E;
+    --second-bg-color: #112e42;
+    --text-color: #2b2b2b;
+    --main-color: #112e42;
+}
+
 html {
     font-size: 62.5%;
     overflow: hidden;
@@ -65,7 +72,7 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 1vh;
-    font-size: 2vh;
+    font-size: 1.7vh;
 }
 .score-list .score-item {
     background-color: hsl(0, 0%, 78%);
@@ -87,17 +94,18 @@ body {
 
 .mode-item a:hover {
     background-color: #c0c0c0; /* Change background color on hover */
-    color: #ffffff; /* Change text color on hover */
+    color: #2b2b2b; /* Change text color on hover */
     transform: translate(0px, -0.5vh);
 }
 
 .mode .mode-item {
-    font-size: 3.5vh;
+    font-size: 3vh;
     color: rgb(128, 128, 128);
+    margin: 1vh;
 }
 
 .underline {
     text-decoration: underline;
-    font-size: 4vh;
+    font-size: 3.5vh;
 }
 /*------------------END---Scoreboard-------------------------------------*/
