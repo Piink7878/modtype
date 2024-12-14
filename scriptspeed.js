@@ -16,6 +16,7 @@ function startGame() {
   document.getElementById("score-time").classList.remove("hidden"); // Show score and time
   document.getElementById("word-container").classList.remove("hidden"); // Show word container
   document.getElementById("input").classList.remove("hidden"); // Show input field
+  document.getElementById("mode").classList.remove("hidden");
 
   score = 0;
   timeLeft = 60;  // Set time to 60 seconds
