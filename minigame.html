@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODtype minigame</title>
+    <link rel="stylesheet" href="stylegame.css">
+</head>
+<body>
+
+     <!--scoreboard section design------------------>
+     <div class="scoreboard">
+        <div class="profile">
+    
+            <span>Player1</span>
+        </div>
+        <div class="metrics">
+            <div>WPM <span>-----</span></div>
+            <div>CMP <span>-----</span></div>
+            <div>SCORE <span>-----</span></div>
+        </div>
+        <h3 class="underline">Scoreboard</h3>
+        <div class="score-list">
+            <div class="score-item">No.1</div>
+            <div class="score-item">No.2</div>
+            <div class="score-item">No.3</div>
+            <div class="score-item">No.4</div>
+            <div class="score-item">No.5</div>
+        </div>
+        <h3 class="underline">Mode</h3>
+        <div class="mode">
+          <div class="mode-item">
+            <a href="play.html">Practice</a>
+        </div>
+        <div class="mode-item">
+            <a href="s">Speed Test</a>
+        </div>
+        <div class="mode-item">
+            <a href="minigame.html">Game</a>
+        </div>
+        <div class="mode-item">
+          <a href="index.html">Log Out</a>
+      </div>
+        </div>
+    </div>
+      <!--END scoreboard section design-------------------->
+ 
+
+    <div class="minigame">
+
+        <div id="game-container">
+
+            <!-- ชื่อ MODE -->
+            <h1>Game</h1>
+
+            <div class="count-box">        
+                <div class="small-box">
+                    <div id="timer">Time: 60</div>
+                    <div id="score">Score: 0</div>
+                    <div id="character-count">Characters Typed: 0</div>
+                </div>
+            </div>
+
+            <div class="container">
+                <!-- Added falling-words-container -->
+                <div class="word-box">
+                    <div id="falling-words-container"></div>
+                </div>
+                 <!-- Input box -->
+                 <input type="text" id="input" placeholder="Type the word..." autofocus />
+            </div>
+        </div>
+    
+        <!-- Modal for Start -->
+        <div id="start-modal" class="modal">
+            <div class="modal-content">
+                <h2>Welcome to MODtype minigame!</h2>
+                <p>Click the button to start the game.</p>
+                <button id="start-btn">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Modal for End -->
+        <div id="end-modal" class="modal">
+            <div class="modal-content">
+                <h2>GAME OVER!</h2>
+                <p id="end-message">Your score is 0.</p>
+                <p id="total-characters">Total characters typed: 0</p> <!-- New paragraph for characters -->
+                <p id="wpm">WPM: 0</p> <!-- New paragraph for WPM -->
+                <button id="restart-btn">Close</button>
+            </div>
+        </div>
+    
+
+    </div>
+
+    <script src="scriptgame.js"></script>
+    <script>
+        // Function to show the start modal
+        function showStartModal() {
+            const startModal = document.getElementById('start-modal');
+            const endModal = document.getElementById('end-modal');
+            startModal.style.display = 'flex';
+            endModal.style.display = 'none';
+            centerModal(startModal);
+        }
+
+        // Function to show the end modal
+        function showEndModal() {
+            const startModal = document.getElementById('start-modal');
+            const endModal = document.getElementById('end-modal');
+            startModal.style.display = 'none';
+            endModal.style.display = 'flex';
+            centerModal(endModal);
+        }
+
+        // Function to center the modal
+        function centerModal(modal) {
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+        }
+
+        // Function to start the game
+        function startGame() {
+            document.getElementById('start-modal').style.display = 'none';
+            // Add your game start logic here
+        }
+
+        // Function to restart the game
+        function restartGame() {
+            document.getElementById('end-modal').style.display = 'none';
+            showStartModal();
+            // Add your game restart logic here
+        }
+
+        // Example usage: Show the start modal when the page loads
+        window.onload = function() {
+            showStartModal();
+        };
+    </script>
+</body>
+</html>

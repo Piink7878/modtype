@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root{
+    --bg--color: #CB8A4E;
+    --second-bg-color: #112e42;
+    --text-color: #2b2b2b;
+    --main-color: #112e42;
+}
+
+body {
+    display: flex; /* Use flexbox layout */
+    justify-content: space-between; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 0;
+    height: 100vh; /* Full viewport height */
+    background-image: url(/codeExplore/modtype/play2.png);
+    text-align: center;
+    margin-bottom: 8vh;
+    gap: 1vh;
+    color: var(--text-color);
+    background: var(--bg--color);
+    overflow-y: scroll; /* สร้าง scroll bar */
+    background-color: #f3f3f3;
+}
+
+html {
+    overflow: hidden;
+}
+
+#app {
+    position: flex;
+    flex: 1;  /* มีทำไมไม่รู้ แต่มีแล้วดีกว่า */
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    width: 100%;
+    padding-top: 0vh; /* 70% down from the top of the viewport */
+    text-align: center;
+}
+
+#app h1 {
+    font-size: 6vw; /* Set font size for h1 */
+    color: black; /* Set text color for h1 */
+    margin-bottom: 3vh; /* Add margin below h1 */
+}
+
+#app label, select {
+    font-size: 1.4vw;
+    margin-bottom: 4vw;
+}
+
+#input-box {
+    width: 80%;
+    padding: 1vw;
+    font-size: 1.5vw;
+    margin-top: 3vh;
+    border: .2vw solid #ccc;
+    border-radius: 2vw;
+}
+
+#timer, #accuracy #status{
+    margin-top: 1vh;
+    font-size: 2.5vw;
+}
+
+button {
+    border: 0.2vh solid #040404;  /* border line color*/
+    background-color: #d3d3d3; /* Green background */
+    color: rgb(0, 0, 0); /* White text */
+    font-size: 1.5vw; /* Text size */
+    padding: 1vw 2vw; /* Padding around the text */
+    border-radius: 2vw; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.4s ease; /* Smooth transition for hover effects */
+    margin-top: 2vh; /* Space between button and other elements */
+}
+
+button:hover {
+    background-color: #c0c0c0; /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+    transform: translate(0px, -0.5vh);
+}
+
+
+#popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000;  /* ให้อยู่เหนือทุกสิ่ง */
+    font-size: 3vh;
+}
+
+
+.popup-content {
+    background-color: white;
+    padding: 2rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.popup-content h2 {
+    margin-bottom: 2vw;
+}
+
+#popup-typed {
+    display: none; /* ซ่อนองค์ประกอบ */
+}
+
+.popup-content button {
+    background-color: #f44336;
+    border: none;
+    padding: 1vw;
+    margin-top: 3vh;
+    color: white;
+    cursor: pointer;
+    border-radius: 1vw;
+}
+
+.popup-content button:hover {
+    background-color: #ca312f;
+    transform: translate(0px, -0.5vh);
+}
+
+#popup-status {
+    color: #6db146;
+    font-size: 4.5vh;
+    margin-bottom: 3vh;
+}
+
+#text-to-type {
+    user-select: none; /* ปิดการเลือกข้อความ */
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -moz-user-select: none;
+    width: 48vw;  /* กำหนดความกว้างสูงสุดของข้อความสุ่ม */
+    font-size: 2vw; /* Text size */
+    word-wrap: break-word;  /* ทำให้คำยาว ๆ ถูกตัดไปบรรทัดถัดไป */
+    flex-wrap: wrap;  /* ข้อความจะจัดวางที่เกินจากบนลงล่าง */
+    justify-self: center;  /* ทำให้ข้อความสุ่มอยู่ตรงกลาง */
+}
+
+/*------------------Scoreboard-------------------------------------*/
+.scoreboard {
+    width: 35vh;
+    padding: 4vh;
+    margin: 4vh 5vw 4vh 5vh;
+    background-color: white;
+    border: 0.5vh solid #040404;  /* border line color*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 90%;
+    max-height: 60rem;
+    box-sizing: border-box;
+    border-radius: 3vh;
+    z-index: 999; /* High z-index to ensure it's on top */
+}
+.scoreboard h2,
+.scoreboard h3 {
+    text-align: left;
+    margin-bottom: 2vh;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.profile span {
+    font-size: 4vh;
+    font-weight: bold;
+}
+.metrics, .mode, .score-list {
+    margin-bottom: 2vh;
+}
+.metrics div, .mode div, .score-list div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1vh;
+    font-size: 1.7vh;
+}
+.score-list .score-item {
+    background-color: hsl(0, 0%, 78%);
+    border-radius: 3vh;
+    border: 0.1vw solid #000000;
+    padding: 0.8vh 3vh;
+    text-align: center;
+}
+
+.mode-item a {
+    display: block; /* Make the anchor tag a block element */
+    text-decoration: none; /* Remove underline from links */
+    color: inherit; /* Inherit color from parent element */
+    padding: 0.1vh; /* Add some padding */
+    border: 0vh solid #ffffff; /* Add a border */
+    border-radius: 1vh; /* Add rounded corners */
+    transition: all 0.4s ease; /* Smooth transition for hover effects */
+}
+
+.mode-item a:hover {
+    background-color: #c0c0c0; /* Change background color on hover */
+    color: #2b2b2b; /* Change text color on hover */
+    transform: translate(0px, -0.5vh);
+}
+
+.mode .mode-item {
+    font-size: 3vh;
+    color: rgb(128, 128, 128);
+    margin: 1vh;
+}
+
+.underline {
+    text-decoration: underline;
+    font-size: 3.5vh;
+}
+/*------------------END---Scoreboard-------------------------------------*/

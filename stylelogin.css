@@ -1,0 +1,41 @@
+
+.login {
+    position: fixed;
+    background-image: url('/codeExplore/modtype/login4.png');
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.login-container {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translate(-50%, -50%);
+}
+  
+.login label {
+    display: flex;
+    margin-bottom: 15px;
+}
+  
+.login input[type="text"],
+.login input[type="password"] {
+    top: 50%;
+    width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+  }
+  
+.login button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+  }

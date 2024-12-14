@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speed Test Game</title>
+  <link rel="stylesheet" href="stylespeed.css">
+</head>
+<body>
+
+     <!--scoreboard section design------------------>
+     <div class="scoreboard">
+      <div class="profile">
+  
+          <span>Player1</span>
+      </div>
+      <div class="metrics">
+          <div>WPM <span>-----</span></div>
+          <div>CMP <span>-----</span></div>
+          <div>SCORE <span>-----</span></div>
+      </div>
+      <h3 class="underline">Scoreboard</h3>
+      <div class="score-list">
+          <div class="score-item">No.1</div>
+          <div class="score-item">No.2</div>
+          <div class="score-item">No.3</div>
+          <div class="score-item">No.4</div>
+          <div class="score-item">No.5</div>
+      </div>
+      <h3 class="underline">Mode</h3>
+      <div class="mode">
+        <div class="mode-item">
+          <a href="play.html">Practice</a>
+      </div>
+      <div class="mode-item">
+          <a href="s">Speed Test</a>
+      </div>
+      <div class="mode-item">
+          <a href="minigame.html">Game</a>
+      </div>
+      <div class="mode-item">
+        <a href="index.html">Log Out</a>
+    </div>
+      </div>
+  </div>
+    <!--END scoreboard section design-------------------->
+
+
+  <div id="game">
+    <button id="start-btn">Start MODspeed</button>
+
+    <div class="count-box">
+      <div id="score-time" class="hidden">
+        <div id="score">Score: 0</div>
+        <div id="time">Time: 60</div>
+        <div id="character-count">Characters Typed: 0</div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="word-container" class="hidden">
+        <span id="word"></span>
+      </div>
+  
+      <input type="text" id="input" class="hidden" placeholder="Type the word" autocomplete="off">
+    </div>
+
+
+
+    <div id="popup" class="hidden">
+      <p>Game Over!</p>
+      <p>Your <span id="final-score"></span></p>
+      <p><span id="final-characters"></span></p> <!-- Display Total Characters Typed -->
+      <p><span id="final-wpm"></span></p> <!-- Added WPM display -->
+      <button id="restart-btn">Restart</button>
+    </div>
+
+  </div>
+
+  <script src="scriptspeed.js"></script>
+</body>
+</html>
