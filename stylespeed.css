@@ -100,7 +100,7 @@ body {
   width: 150vh; /* ปรับความกว้างของกรอบที่คำวิ่ง */
   max-width: 60vh; /* ความกว้างสูงสุด */
   height: 10vh;
-  margin-top: 100px;
+  margin-top: 10vh;
   font-size: 48px;
   font-weight: bold;
   position: relative;
