@@ -1,3 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root{
+    --bg--color: #CB8A4E;
+    --second-bg-color: #112e42;
+    --text-color: #2b2b2b;
+    --main-color: #112e42;
+}
+
+body {
+  display: flex; /* Use flexbox layout */
+  justify-content: space-between; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  justify-content: flex-start;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Madimi+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+:root{
+    --bg--color: #ffffff;
+    --second-bg-color: #112e42;
+    --text-color: #000000;
+    --main-color: #112e42;
+
+}
+
+.small-image {
+    width: 100px;
+    height: auto;
+    margin-left: 20vh;
+    margin-top: 5vh;
+}
+
+@media (min-width: 600px) {
+    .small-image {
+        width: 150vh;
+    }
+}
+
+@media (min-width: 900px) {
+    .small-image {
+        width: 50vh;
+    }
+}
 
 .login {
     position: fixed;
@@ -9,10 +79,21 @@
     background-repeat: no-repeat;
 }
 
+h1 {
+  color: #000000;
+  display: flex;
+  justify-content: center; /* Center the heading */
+  margin-top: 5vh;
+  font-size: 55px;
+  padding-right: 0; /* Remove padding to center the text */
+  text-align: center; /* Ensure text is centered */
+  margin-bottom: 5vh;
+}
+
 .login-container {
   position: absolute;
   top: 50%;
-  right: 5%;
+  right: 10%;
   transform: translate(-50%, -50%);
 }
   
@@ -31,11 +112,20 @@
     margin-bottom: 15px;
   }
   
-.login button {
-    background-color: white;
-    color: black;
-    padding: 10px 20px;
-    border: 2px solid black;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  button {
+    border: 0.2vh solid #040404;  /* border line color*/
+    background-color: #d3d3d3; /* Green background */
+    color: rgb(0, 0, 0); /* White text */
+    font-size: 1.5vw; /* Text size */
+    padding: 1vw 2vw; /* Padding around the text */
+    border-radius: 2vw; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.4s ease; /* Smooth transition for hover effects */
+    margin-top: 2vh; /* Space between button and other elements */
+}
+
+button:hover {
+    background-color: #1a2439; /* Change background color on hover */
+    color: #ffffff; /* Change text color on hover */
+    transform: translate(0px, -0.5vh);
+}
