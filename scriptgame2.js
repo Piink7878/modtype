@@ -157,6 +157,7 @@ function startGame() {
 function restartGame() {
     score = 0;
     timeLeft = 60;
+    document.getElementById('character-count').textContent = "Characters Typed: 0"; 
     remainingWords = [...words]; // Reset the word list
     typedWords = [];
     charactersTyped = 0;
