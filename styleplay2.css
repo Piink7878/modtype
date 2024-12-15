@@ -172,7 +172,7 @@ button:hover {
     left: 0;
     top: 0;
     height: 90%;
-    max-height: 60rem;
+    max-height: 15rem;
     box-sizing: border-box;
     border-radius: 3vh;
     z-index: 999; /* High z-index to ensure it's on top */
