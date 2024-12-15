@@ -22,9 +22,20 @@ body {
 }
 
 #game {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  outline: none;
+
+  position: flex;
+  flex: 1;  /* มีทำไมไม่รู้ แต่มีแล้วดีกว่า */
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  width: 50%;
+  padding-top: 0vh; /* 70% down from the top of the viewport */
   text-align: center;
-  color: black;
-  position: relative;
 }
 
 .modal {
@@ -34,7 +45,6 @@ body {
   transform: translate(-50%, -50%); /* Adjust for exact center alignment */
   width: 70%; /* Optional: to make the modal smaller */
   max-width: 100vh; /* Optional: max width for large screens */
-  color: black; /* Text color */
   padding: 20px;
   border-radius: 10px; /* Optional: rounded corners */
   z-index: 1000; /* Ensure it appears above other content */
@@ -45,21 +55,41 @@ body {
 
 
 #start-btn {
+  margin: 2vh 0; /* Add vertical spacing between buttons */
+  padding: 1.5vh 3vh; /* Add padding for better appearance */
+  border: 0.5vh solid  #000; /* Add a border for visual separation */
+  border-radius: 5vh; /* Add rounded corners */
+  text-decoration: none; /* Remove underline from links */
+  color: #000; /* Set text color */
+  font-size: 4vh; /* ขนาดเริ่มต้นของปุ่ม */
 
-  font-size: 7vh;
-  padding: 2vh 9vh;
-  cursor: pointer;
-  background-color: white;
-  color: black;
+}
+
+#start-btn :hover{
+  font-size: 5vh; /* ขนาดเริ่มต้นของปุ่ม */
+  color: #ffffff; /* Set text color */
+  transition: 0.7s;
   border: none;
-  border: 0.7vh solid black; /* เพิ่มเส้นกรอบสีขาว */
-  border-radius: 5vw;
 }
 
 #score-time {
   position: absolute;
   top: 2vh;
   right: 1vh;
+}
+
+.small-box {
+  margin-top: 4vh;
+  display: flex;
+  justify-content: flex-end; /* Align items to the right */
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  width: 100%; /* Full width */
+  padding: 1rem; /* Add some padding */
+  border-radius: 3vh; /* Add rounded corners */
+  margin-bottom: 0rem; /* Add margin to separate from other elements */
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: 2.5vh;
 }
 
 .container {
@@ -74,6 +104,14 @@ body {
   padding: 1rem; /* Add some padding */
   position: relative; /* Ensure the container is positioned relative for absolute positioning of falling words */
   overflow: hidden; /* Hide overflowing content */
+}
+
+h1 {
+  font-size: 7vw; /* Set font size for h1 */
+  color: black; /* Set text color for h1 */
+  margin-bottom: 0vh; /* Add margin below h1 */
+  position: absolute;
+  margin-bottom: 30vh;
 }
 
 /* อันเก่า */
@@ -96,11 +134,12 @@ body {
   border: 0.5vh solid #080808;  /* border line color */
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
-  height: 100%;
+  width: 100vh;
+  height: 10vh;
   border-radius: 3vh;
   margin-bottom: 1rem;
   overflow: hidden; /* Hide overflowing content */
+  /* display: flex; ห้ามนะเว้ยยย */
 }
 
 
@@ -111,23 +150,74 @@ body {
 }
 
 #input {
-  margin-top: 20px;
-  padding: 10px;
-  font-size: 5vh;
-  width: 50vh;
+  padding: 1.2vh;
+  font-size: 3vh;
+  width: 80%;
+  max-width: 50vh;
+  text-align: center;
+  margin-bottom: 6vh;
+  z-index: 1000; /* Ensure input is above falling words */
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid #ccc;
 }
 
 #popup {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 1);
-  padding: 70px;
-  border-radius: 10px;
-  color: white;
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position to ensure it stays in place */
+  top: 50%; /* 50% from the top */
+  left: 50%; /* 50% from the left */
+  transform: translate(-50%, -50%); /* Adjust for exact center alignment */
+  width: 70%; /* Optional: to make the modal smaller */
+  max-width: 100vh; /* Optional: max width for large screens */
+  color: black; /* Text color */
+  padding: 20px;
+  border-radius: 10px; /* Optional: rounded corners */
+  z-index: 1000; /* Ensure it appears above other content */
   text-align: center;
-  display: none;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 90%; /* Optional: limit the width of the modal content */
+    max-height: 90%; /* Optional: limit the height of the modal content */
+    overflow: auto; /* Optional: add scroll if content overflows */
+    align-items: center;
+}
+
+h2 {
+  color: #f44336;
+  font-size: 4.5vh;
+  margin-bottom: 3vh;
+}
+
+p .one {
+  font-size: 2.5vh;
+  margin-bottom: 3vh;
+}
+
+#popup button {
+  background-color: #f44336;
+  border: none;
+  padding: 1vw;
+  margin-top: 3vh;
+  color: white;
+  cursor: pointer;
+  border-radius: 1vw;
+  transition: all 0.4s ease; /* Smooth transition for hover effects */
+  font-size: 3vh;
+}
+
+#popup button:hover {
+  background-color: #ca312f; /* Change background color on hover */
+  color: #ffffff; /* Change text color on hover */
+  transform: translate(0px, -0.5vh);
 }
 
 .hidden {
@@ -135,16 +225,23 @@ body {
 }
 
 button {
-  background-color: #444;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  cursor: pointer;
-  margin-top: 20px;
+  margin: 2vh 0; /* Add vertical spacing between buttons */
+  padding: 1.5vh 3vh; /* Add padding for better appearance */
+  border: 0.5vh solid  #000; /* Add a border for visual separation */
+  border-radius: 5vh; /* Add rounded corners */
+  text-decoration: none; /* Remove underline from links */
+  color: #000; /* Set text color */
+  font-size: 4vh; /* ขนาดเริ่มต้นของปุ่ม */
 }
 
 button:hover {
-  background-color: #666;
+  font-size: 5vh; /* ขนาดของปุ่มเมื่อเม้าส์ชี้ */
+  background-color: #78d400;
+  color: #fff;
+  border: #78d400;
+  transition: 0.7s;
+  box-shadow: 0 0 5vh rgb(98, 98, 98);
+  transform: translate(0px, -10px);
 }
 
 /*------------------Scoreboard-------------------------------------*/

@@ -1,9 +1,9 @@
 let score = 0;
 let timeLeft = 60;  // 60 seconds
-let wordList = ["hello", "world", "speed", "python", "game", "test", "code"];
+let wordList = ['function' , 'variable' , 'loop' , 'array' , 'object' , 'string' , 'integer' , 'syntax' , 'error' , 'input' , 'output' , 'compile' , 'debug' , 'execute' , 'stack' , 'queue' , 'recursion' , 'condition' , 'event' , 'asynchronous' , 'promise' , 'goto' , 'float' , 'sizeof' , 'switch' , 'typedef' , 'continue' , 'static' , 'for' , 'char' , 'return' , 'malloc' , 'extern' , 'enum' , 'if' , 'break' , 'main' , 'long' ,'void' , 'do' , 'while' , 'case' , 'int' , '#define' , 'scanf' , 'const' , 'free' , 'unsigned' , 'printf' , '#include' , 'signed' , 'def' , 'while' , 'import' , 'if' , 'try' , 'lambda' , 'else' , 'class' , 'for' , 'return' , 'break' , 'continue' , 'with' , 'global' , 'except' , 'is' , 'None' , 'yield' , 'and' , 'or' , 'del' , 'assert' , 'finally' , 'from' , 'in' , 'not' , 'pass' , 'True' , 'False' , 'nonlocal' , 'encryption' , 'decryption' , 'hash' , 'algorithm' , 'symmetric' , 'asymmetric' , 'key' , 'certificate' , 'public' , 'private' , 'cryptography' , 'brute' , 'force' , 'attack' , 'phishing' , 'malware' , 'ransomware' , 'firewall' , 'antivirus' , 'intrusion' , 'detection' , 'penetration' , 'testing' , 'vulnerability' , 'exploit' , 'game' , 'engine' , 'Unity' , 'Unreal' , 'asset' , 'physics' , 'shader' , 'animation' , 'sprite' , '3D' , '2D' , 'collision' , 'detection' , 'rendering' , 'framerate' , 'level' , 'design' , 'character' , 'controller' , 'AI' , 'pathfinding' , 'particle' , 'system' , 'skybox' , 'lighting' , 'texture' , 'rigging' , 'machine' , 'learning' , 'deep' , 'neural' , 'network' , 'supervised' , 'reinforcement' , 'learning' , 'dataset' , 'training' , 'validation' , 'testing' , 'extraction' , 'hyperparameter' , 'optimization' , 'overfitting' , 'underfitting' , 'backpropagation' , 'convolution' , 'recurrent' , 'pipeline' , 'Docker' , 'Kubernetes' , 'Jenkins' , 'GitHub' , 'Actions' , 'Terraform' , 'Ansible' , 'Puppet' , 'Chef' , 'monitoring' , 'logging' , 'Prometheus' , 'Grafana' , 'deployment' , 'scaling' , 'load' , 'balancing' , 'automation' , 'container' , 'orchestration' , 'version' , 'control' , 'repository' , 'HTML' , 'CSS' , 'JavaScript' , 'React' ,  'Angular' , 'Vue' , 'Node.js' , 'Express' , 'RESTful' , 'API' , 'GraphQL' , 'MongoDB' , 'MySQL' , 'authentication' , 'authorization' , 'session' , 'cookie' , 'token' , 'encryption' , 'hashing' , 'database' , 'schema' , 'table' , 'row' , 'column' , 'primary' , 'key' , 'foreign' , 'key' , 'index' , 'query' , 'SQL' , 'SELECT' , 'INSERT' , 'UPDATE' , 'DELETE' , 'JOIN' , 'INNER' , 'OUTER' , 'LEFT' , 'RIGHT' , 'CROSS' , 'UNION' , 'aggregate' , 'normalization' , 'ACID' , 'transaction' , 'rollback' , 'commit' , 'NoSQL' , 'Redis' , 'Cassandra' , 'Elasticsearch' , 'binary' , 'search' , 'merge' , 'sort' , 'quick' , 'sort' , 'dynamic' , 'programming' , 'greedy' , 'algorithm' , 'graph' , 'tree' , 'heap' , 'hash' , 'divide' , 'conquer' , 'brute' , 'force' , 'backtracking' , 'optimization' , 'traversal' , 'node'];
 let currentWord = "";
 let wordX;
-let wordSpeed = 3.4;  // Word speed
+let wordSpeed = 3;  // Word speed
 let gameInterval;
 let timerInterval;
 let countdownInterval;
@@ -16,6 +16,7 @@ function startGame() {
   document.getElementById("score-time").classList.remove("hidden"); // Show score and time
   document.getElementById("word-container").classList.remove("hidden"); // Show word container
   document.getElementById("input").classList.remove("hidden"); // Show input field
+  document.getElementById("mode").classList.remove("hidden");
 
   score = 0;
   timeLeft = 60;  // Set time to 60 seconds
